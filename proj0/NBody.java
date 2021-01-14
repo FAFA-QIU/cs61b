@@ -6,12 +6,12 @@ public class NBody {
     }
 
     public static Planet[] readPlanets(String fileName) {
-        Planet[] planets = new Planet[5];
-        int index = 0;
         In in = new In(fileName);
+        int num = in.readInt();
+        Planet[] planets = new Planet[num];
+        int index = 0;
         in.readDouble();
-        in.readDouble();
-        while (index < 5) {
+        while (index < num) {
             double xP = in.readDouble();
             double yP = in.readDouble();
             double xV = in.readDouble();
