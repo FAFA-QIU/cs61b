@@ -6,10 +6,10 @@ public class TestArrayDequeGold {
     public void studentArrayTest() {
         StudentArrayDeque<Integer> deque = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> ad = new ArrayDequeSolution<>();
-        while (true) {
+        String message = "\n";
+        for (int i = 0; i < 10; i++) {
             int num = StdRandom.uniform(4);
             int value = StdRandom.uniform(10);
-            String message = "\n";
             if (num == 0) {
                 deque.addFirst(value);
                 ad.addFirst(value);
