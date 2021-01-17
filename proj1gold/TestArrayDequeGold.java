@@ -21,6 +21,7 @@ public class TestArrayDequeGold {
                 message += String.format("deque.addLast(%d)\n", value);
                 ad.addLast(value);
                 message += "deque.get(deque.size() - 1)\n";
+                message += "deque.size()\n";
                 assertEquals(message, ad.get(ad.size() - 1), deque.get(deque.size() - 1));
             } else if (num == 2) {
                 if (!ad.isEmpty() && !deque.isEmpty()) {
