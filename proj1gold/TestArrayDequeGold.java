@@ -6,7 +6,7 @@ public class TestArrayDequeGold {
     public void studentArrayTest() {
         StudentArrayDeque<Integer> deque = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> ad = new ArrayDequeSolution<>();
-        String message = "";
+        String message = "\n";
         while (true) {
             int num = StdRandom.uniform(4);
             int value = StdRandom.uniform(10);
@@ -15,14 +15,14 @@ public class TestArrayDequeGold {
                 ad.addFirst(value);
                 message += String.format("addFirst(%d)\n", value);
                 message += "get(0)\n";
-                assertEquals(message, ad.get(0), deque.get(0));
+                assertEquals(message, ad.getFirst(), deque.get(0));
             } else if (num == 1) {
                 deque.addLast(value);
                 message += String.format("addLast(%d)\n", value);
                 ad.addLast(value);
-                message += "get(deque.size() - 1)\n";
+                message += "get(size() - 1)\n";
                 message += "size()\n";
-                assertEquals(message, ad.get(ad.size() - 1), deque.get(deque.size() - 1));
+                assertEquals(message, ad.getLast(), deque.get(deque.size() - 1));
             } else if (num == 2) {
                 if (!ad.isEmpty() && !deque.isEmpty()) {
                     message += "removeFirst()\n";
