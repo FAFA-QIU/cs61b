@@ -5,17 +5,17 @@ public class LinkedListDeque<T> {
         Node prev;
         Node next;
 
-        public Node(T item, Node prev, Node next) {
+        Node(T item, Node prev, Node next) {
             this.item = item;
             this.prev = prev;
             this.next = next;
         }
 
-        public Node(T item) {
+        Node(T item) {
             this(item, null, null);
         }
 
-        public Node() {
+        Node() {
             this(null, null, null);
         }
     }
@@ -130,7 +130,7 @@ public class LinkedListDeque<T> {
         if (index == 0) {
             return node.item;
         }
-        return getRecursiveHelper(index-1, node.next);
+        return getRecursiveHelper(index - 1, node.next);
     }
 
     // // Prints the items in the deque from first to last, separated by a space.
