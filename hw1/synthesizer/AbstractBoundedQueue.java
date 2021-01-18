@@ -5,12 +5,8 @@ public abstract class AbstractBoundedQueue<T> implements BoundedQueue<T> {
     protected int capacity;
 
     // Return capacity
-    public int capacity() {
-        return capacity;
-    }
+    public abstract int capacity();
 
     // Return fillCount
-    public int fillCount() {
-        return fillCount;
-    }
+    public abstract int fillCount();
 }

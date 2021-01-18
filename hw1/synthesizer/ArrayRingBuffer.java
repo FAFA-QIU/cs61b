@@ -25,18 +25,18 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /**
      * Return the capacity of ring buffer.
      */
-//    @Override
-//    public int capacity() {
-//        return rb.length;
-//    }
+    @Override
+    public int capacity() {
+        return rb.length;
+    }
 
     /**
      * Return the number of items currently in the ring buffer.
      */
-//    @Override
-//    public int fillCount() {
-//        return fillCount;
-//    }
+    @Override
+    public int fillCount() {
+        return fillCount;
+    }
 
     /**
      * Adds x to the end of the ring buffer. If there is no room, then
