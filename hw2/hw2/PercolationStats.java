@@ -8,6 +8,9 @@ public class PercolationStats {
 
     // perform T independent experiments on an N-by-N grid
     public PercolationStats(int N, int T, PercolationFactory pf) {
+        if (N <= 0 || T <= 0) {
+            throw new IllegalArgumentException();
+        }
         int index = 0;
         array = new double[T];
         while (index < T) {
@@ -38,7 +41,7 @@ public class PercolationStats {
 
     // high endpoint of 95% confidence interval
     public double confidenceHigh() {
-        return mean() - (1.96 * Math.sqrt(stddev())) / Math.sqrt(array.length);
+        return mean() + (1.96 * Math.sqrt(stddev())) / Math.sqrt(array.length);
     }
 
 
