@@ -1,6 +1,7 @@
 package hw4.puzzle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Board implements WorldState {
@@ -23,7 +24,7 @@ public class Board implements WorldState {
     // Returns value of tile at row i, column j (or 0 if blank)
     public int tileAt(int i, int j) {
         if (i < 0 || i >= size || j < 0 || j > size) {
-            throw new IllegalArgumentException();
+            throw new IndexOutOfBoundsException();
         }
         return board[i][j];
     }
@@ -141,7 +142,10 @@ public class Board implements WorldState {
     }
 
     public int hashCode() {
-        return super.hashCode();
+        int hash = 17;
+        hash = hash * 31 + Arrays.hashCode(board);
+        hash = hash * 31 + size;
+        return hash;
     }
 
     /**
